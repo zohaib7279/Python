@@ -18,3 +18,6 @@ print(c >= d)
 print(c > d)
 print(c <= d)
 print(c < d)
+
+e = ("0")
+print(type(e))
