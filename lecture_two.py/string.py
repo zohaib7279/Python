@@ -10,7 +10,10 @@ str5 = "I am learn python with sharda khapara"
 print(str5.endswith("ra") )
 str6 = "I am learn python with sharda khapara"
 print(str6.capitalize())
-str7 = "I om learn python with shardakhapara"
+str7 = "I om read python with shardakhapara"
 print(str7.replace("o", "a"))
 str8 = "I om learn python with shardakhapara"
-print(str8.find("n"))
+print(str8.find("learn"))
+str9 = "I learn Python From Sharda Khapara and from Apna college and from"
+print(str9.count("from"))
+print(str9.count("and"))
