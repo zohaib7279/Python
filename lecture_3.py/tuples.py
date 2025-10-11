@@ -1,0 +1,6 @@
+tup = ()
+tup1 = (1)
+tup2 = (1,2)
+print(type(tup))
+print(type(tup1))
+print(type(tup2))
