@@ -1,3 +1,3 @@
 import webbrowser
 
-webbrowser.open("mozila.com")
+webbrowser.open("google.com")
