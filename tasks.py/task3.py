@@ -1,5 +1,8 @@
 import sys
-first = input("Enter first number: ")
+first = int(input("Enter first number: "))
+def isinstance(first, str):
+    print("please Enter the valid number")
+    sys.exit()
 second = input("Enter second number: ")
 sum = first + second
 diffrence = int(first) - int(second)
