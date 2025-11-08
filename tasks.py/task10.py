@@ -10,7 +10,3 @@ elif grade >= 60 and grade <= 70:
 else:
     print("Failed")
 
-
-# what is validationn in python like user enter the valid number for the plus and minus.
-# goto statement
-# loops to print the list or table etc.
