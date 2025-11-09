@@ -1,0 +1,37 @@
+[
+  {
+    "q": "hello",
+    "a": "Hi! How can I help you?",
+    "tf": {
+      "hello": 1.0
+    }
+  },
+  {
+    "q": "how are you",
+    "a": "I'm a program — I don't have feelings, but thanks for asking!",
+    "tf": {
+      "how": 0.5773502691896258,
+      "are": 0.5773502691896258,
+      "you": 0.5773502691896258
+    }
+  },
+  {
+    "q": "what is your name",
+    "a": "I am SimpleAI, your local chatbot.",
+    "tf": {
+      "what": 0.5,
+      "is": 0.5,
+      "your": 0.5,
+      "name": 0.5
+    }
+  },
+  {
+    "q": "who made you",
+    "a": "You did — with a little help from Python.",
+    "tf": {
+      "who": 0.5773502691896258,
+      "made": 0.5773502691896258,
+      "you": 0.5773502691896258
+    }
+  }
+]
