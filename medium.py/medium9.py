@@ -1,11 +1,7 @@
+from fractions import Fraction
 def convert_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5 / 9
-    print(f"{fahrenheit}°F is equal to {celsius:.2f}°C")
-
-while True:
-    try:
-        f = float(input("Enter temperature in Fahrenheit: "))
-        convert_to_celsius(f)
-        break
-    except ValueError:
-        print("Please enter a valid number")
+    # (F - 32) * 5/9 are the formula to convert Fahrenheit to Celsius
+    celsius = (int(fahrenheit) - 32) * Fraction(5, 9)
+    return celsius
+print(convert_to_celsius(int(input("Enter The number convert to Celsius = "))))
+    

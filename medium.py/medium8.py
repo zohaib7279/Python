@@ -1,9 +1,6 @@
-def is_palindrome(word):
-    return word == word[::-1]
-words = ["python", "Html", "Css"]    
-
-for w in words:
-    if is_palindrome(w):
-        print(f"{w} is a palindrome")
+def is_pailndrome(word):
+    if word == word:
+        print("The word is palindrome")
     else:
-        print(f"{w} is not a palindrome")
+        print("The word is not palindrome")
+is_pailndrome(str(input("Enter The word = ")))
