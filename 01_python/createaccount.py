@@ -1,4 +1,4 @@
-print("----- CREATE ACCOUNT APP -----")
+print("----- CREATE ACCOUNT APP -----") 
 account_list = []   # store multiple accounts
 while True:
     print("1. Add account")
