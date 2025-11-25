@@ -8,15 +8,16 @@ while True:
             account_messege = []
 
             while True:
-                print("\n1. Add account")
+                print("1. Add account")
                 print("2. View account")
                 print("3. Delete account")
-                print("4. Sign out")
+                print("4. Activate account")
                 print("5. Send Message")
                 print("6. View Messages")
                 print("7. Delete all messages")
                 print("8. Display All Account And All Messages")
-                print("9. Exit")
+                print("9. View Activate Account")
+                print("10. Exit")
 
                 try:
                     account = int(input("Enter the number to perform function = "))
@@ -48,22 +49,44 @@ while True:
                             break
 
                     confirm_password = input("Confirm your password: ")
-                    while confirm_password != new_password:
-                        print("Passwords do not match.")
-                        confirm_password = input("Confirm your password: ")
+                    while True:
+                        if confirm_password != new_password:
+                            print("Passwords do not match.")
+                            confirm_password = input("Confirm your password: ")
+                        else:
+                            break
+                    
 
                     email = input("Enter your email: ")
-                    while "@" not in email or "." not in email:
-                        print("Invalid email format.")
-                        email = input("Enter your email: ")
+                    while True:
+                        if "@" not in email or "." not in email:
+                            print("Invalid email format.")
+                            email = input("Enter your email: ")
+                        if email == "":
+                            print("Email cannot be empty.")
+                            email = input("Enter your email: ")
+                        elif "gmail.com" not in email and "yahoo.com" not in email and "outlook.com" not in email:
+                            print("Email must be from gmail, yahoo, or outlook.")
+                            email = input("Enter your email: ")
+                        else:
+                            break
 
                     phone_number = input("Enter your phone number: ")
-                    while phone_number == "" or len(phone_number) < 10 or len(phone_number) > 15:
+                    while True:
                         if phone_number == "":
                             print("Phone number cannot be empty.")
+                            phone_number = input("Enter your phone number: ")
+                        elif phone_number == "1234567890":
+                            print("Phone number cannot be a sequence of numbers.")
+                            phone_number = input("Enter your phone number: ")
+                        elif phone_number == "0000000000":
+                            print("Phone number cannot be all zeros.")
+                            phone_number = input("Enter your phone number: ")
+                        elif len(phone_number) > 15 or len(phone_number) < 10:
+                            print("Phone number must be between 10 and 15 digits.")
+                            phone_number = input("Enter your phone number: ")
                         else:
-                            print("Phone number must be between 10 to 15 digits.")
-                        phone_number = input("Enter your phone number: ")
+                            break
 
                     account_data = {
                         "username": new_username,
@@ -79,7 +102,7 @@ while True:
                     if len(account_list) == 0:
                         print("No accounts found. Please add an account first.")
                     else:
-                        print(account_list)
+                        print(f"{account_list}")
 
                 elif account == 3:
                     delete = input("Enter username to delete OR type 'all': ")
@@ -87,22 +110,58 @@ while True:
                         account_list.clear()
                         print("All accounts deleted.")
                     else:
-                        found = False
-                        for acc in account_list:
-                            if acc["username"] == delete:
-                                account_list.remove(acc)
-                                found = True
-                                print("Account deleted.")
-                                break
-                        if not found:
-                            print("Account not found.")
+                        if len(account_list) == 0:
+                            print("No accounts found. Please add an account first.")
+                        else:
+                            if delete == ["username"]:
+                                account_list.clear(["username"])
+                                print(f"Account '{delete}' deleted.")
+                            else:
+                                print(f"Account '{delete}' not found.")
 
                 elif account == 4:
-                    print("Signing out.....")
+                    activate = input("Enter account username to activate = ")
+                    if len(account_list) == 0:
+                        print("No accounts found. Please add an account first.")
+                    else:
+                        print(f"Account '{activate}' is now activated.")
 
                 elif account == 5:
                         recipient = input("To : ")
+                        while True:
+                            try:
+                                if recipient == "":
+                                    print("Recipient cannot be empty.")
+                                    recipient = input("To : ")
+                                elif recipient != "." and "@" not in recipient:
+                                    print("Invalid characters in recipient field.")
+                                    recipient = input("To : ")
+                                elif ("gmail.com" not in recipient and 
+                                "yahoo.com" not in recipient and 
+                                "outlook.com" not in recipient):
+                                    print("Email must be from gmail,yahoo,or outlook.")
+                                    recipient = input("To : ")
+                                else:
+                                    break
+                            except:
+                                print("An error occurred. Please try again.")
+                                recipient = input("To : ")
+                                continue
                         sender = input("From : ")
+                        while True:
+                            try:
+                                if sender == "":
+                                    print("Sender cannot be empty.")
+                                    sender = input("From : ")
+                                elif sender is not "." and "@" not in sender:
+                                    print("Invalid characters in sender field.")
+                                    sender = input("From : ")
+                                else:
+                                    break
+                            except:
+                                print("An error occurred. Please try again.")
+                                sender = input("From : ")
+                                continue
                         ent_messege = input("Enter your message: ")
                         account_messege.append({"to": recipient, "from": sender, "message": ent_messege})
                         print("Message sent!")
@@ -122,6 +181,12 @@ while True:
                     print("Messages:", account_messege)
 
                 elif account == 9:
+                    if len(account_list) == 0:
+                        print("No accounts found. Please add an account first.")
+                    else:
+                        print("Activated Accounts:", activate)
+
+                elif account == 10:
                     print("Exiting the application. Goodbye!")
                     break
 
