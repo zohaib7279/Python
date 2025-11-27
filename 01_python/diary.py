@@ -6,7 +6,7 @@ while True:
         print("a) Python\tb) Java")
         print("c) HTML\td) JavaScript")
 
-        answer = input("Enter your answer (a/b/c/d) or 'q' to quit: ")
+        answer = input("Enter your answer (a/b/c/d): ")
 
         if answer == "q":
             print("Exiting the application. Goodbye!")
@@ -22,7 +22,7 @@ while True:
         print("a) Brendan Eich\tb) James Gosling")
         print("c) Guido van Rossum\td) Tim Berners-Lee")
 
-        answer = input("Enter your answer (a/b/c/d) or 'q' to quit: ")
+        answer = input("Enter your answer (a/b/c/d): ")
 
         if answer == "q":
             print("Exiting the application. Goodbye!")
@@ -38,11 +38,7 @@ while True:
         print("a) Microsoft\tb) Google")
         print("c) Facebook\td) Python Software Foundation")
 
-        answer = input("Enter your answer (a/b/c/d) or 'q' to quit: ")
-
-        if answer == "q":
-            print("Exiting the application. Goodbye!")
-            break
+        answer = input("Enter your answer (a/b/c/d ")
 
         if answer == "d":
             print("Correct! Python is managed by the Python Software Foundation.")
@@ -62,6 +58,9 @@ while True:
         answer = input("Enter your answer (a/b/c/d): ")
         if answer == "b":
             print("Correct! C is the language inside Python.")
+        elif answer == "exit":
+            print("Exiting the application. Goodbye!")
+            break
         else:
             print("Incorrect! Please enter the correct answer.")
 
